@@ -74,7 +74,8 @@ CREATE SEQUENCE seq_file_id START WITH 1 INCREMENT BY 1;
 --------------------------------------------------------------------------------
 DECLARE
   v_file_name  VARCHAR2(200) := '8bitdo_pro_3.jpg';                             -- 파일명
-  v_file_path  VARCHAR2(500) := '"D:\developer_project\DB_Table\ddl\07_file_tbl\images\'; -- 경로(마지막 \ 포함 권장)
+  -- v_file_path  VARCHAR2(500) := '"D:\developer_project\DB_Table\ddl\07_file_tbl\images\'; -- 경로(마지막 \ 포함 권장)
+  v_file_path  VARCHAR2(500) := 'D:\team_project\DB_Table\file\images\'; -- 경로(마지막 \ 포함 권장)
   v_ext        VARCHAR2(20)  := REGEXP_SUBSTR('8bitdo_pro_3.jpg','[^.]+$');     -- 확장자: jpg
   v_size       NUMBER;
   v_bfile      BFILE;
@@ -131,12 +132,17 @@ SELECT file_id, file_target_type, file_target_id, file_name, file_ext, file_size
 --      - 샘플 데이터만 삭제 / 구조·제약 유지
 --------------------------------------------------------------------------------
 -- 예: 특정 target만 정리하고 싶으면 아래처럼 조건을 좁혀 사용
--- DELETE FROM file_tbl WHERE file_target_type='content' AND file_target_id='1001';
--- COMMIT;
+DELETE FROM file_tbl WHERE file_target_type='content' AND file_target_id='1001';
+COMMIT;
 
 -- 일괄 정리(주의: 전체 데이터 삭제)
--- DELETE FROM file_tbl;
--- COMMIT;
+DELETE FROM file_tbl;
+COMMIT;
+-- 시퀀스 삭제
+BEGIN EXECUTE IMMEDIATE 'DROP SEQUENCE seq_file_id';  EXCEPTION WHEN OTHERS THEN NULL; END;
+/
+CREATE SEQUENCE seq_file_id  START WITH 1 INCREMENT BY 1 NOCACHE NOCYCLE;
+/
 
 --------------------------------------------------------------------------------
 -- 5-2) 💀 ddl 블록까지 안전 삭제 💀
