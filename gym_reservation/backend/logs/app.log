@@ -1,0 +1,3 @@
+2025-09-01 09:40:39.524 INFO  [restartedMain] c.g.BackendApplication - Starting BackendApplication using Java 17.0.12 with PID 10920 (D:\developer_project\gym_reservation\backend\bin\main started by kimsooheon in D:\developer_project\gym_reservation\backend)
+2025-09-01 09:40:39.531 INFO  [restartedMain] c.g.BackendApplication - The following 1 profile is active: "dev"
+2025-09-01 09:40:40.950 INFO  [restartedMain] c.g.BackendApplication - Started BackendApplication in 1.728 seconds (process running for 2.311)
