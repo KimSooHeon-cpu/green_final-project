@@ -8,6 +8,8 @@ import org.springframework.boot.test.context.SpringBootTest;	// 🚀 스프링 �
 import org.springframework.test.context.TestPropertySource;	// ⚙️ 테스트용 프로퍼티 오버라이드(선택)
 import lombok.extern.log4j.Log4j2;				// 📝 Log4j2 로깅
 
+// 테스트 뭐가 수정되었나?
+
 /**
  * 스모크 테스트(테스트 전용)
  * - 목적: 애플리케이션 컨텍스트 로딩 + MyBatis 매퍼 빈 등록 + DB 커넥션/쿼리 동작 여부 확인
