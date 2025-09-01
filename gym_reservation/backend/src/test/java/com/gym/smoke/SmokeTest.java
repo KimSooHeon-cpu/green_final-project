@@ -9,6 +9,7 @@ import org.springframework.test.context.TestPropertySource;	// ⚙️ 테스트�
 import lombok.extern.log4j.Log4j2;				// 📝 Log4j2 로깅
 
 // 테스트 뭐가 수정되었나?
+// 테스트 뭐가 수정되었나?
 
 /**
  * 스모크 테스트(테스트 전용)
